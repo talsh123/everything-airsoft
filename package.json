@@ -1,0 +1,30 @@
+{
+  "name": "everything-airsoft",
+  "version": "1.0.0",
+  "description": "Everything Airsoft website allows users to browse and purchase items relating to the Airsoft sport.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/talsh123/everything-airsoft.git"
+  },
+  "keywords": [
+    "Airsoft"
+  ],
+  "author": "Tal-Shalom Ben Ovadia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/talsh123/everything-airsoft/issues"
+  },
+  "homepage": "https://github.com/talsh123/everything-airsoft#readme",
+  "dependencies": {
+    "concurrently": "^6.2.1",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
