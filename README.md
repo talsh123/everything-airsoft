@@ -1,6 +1,6 @@
 # [Everything Airsoft](https://github.com/talsh123/everything-airsoft) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE)
 
-Everything Airosft website allows it's users to browse and purchase a variety of items relating to the Airsoft sport.
+Everything Airsoft website allows it's users to browse and purchase a variety of items relating to the Airsoft sport.
 Everything Airsoft uses the following:
 * **[Material UI](https://mui.com/)**: Materail UI provides a robust, customizable, and accessible library of foundational and advanced components, enabling you to build your own design system and develop React applications faster.
 * **[React](https://reactjs.org/)**: A JavaScript library for building user interfaces
