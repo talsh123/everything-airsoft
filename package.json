@@ -4,7 +4,9 @@
   "description": "Everything Airsoft website allows users to browse and purchase items relating to the Airsoft sport.",
   "main": "server.js",
   "scripts": {
-    "dev": "node server.js"
+    "server": "set HTTPS=true&&set SSL_CRT_FILE=server.cert&&set SSL_KEY_FILE=server.key&&nodemon server.js",
+    "frontend": "cd frontend && npm run start",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",

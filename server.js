@@ -1,5 +1,4 @@
 // Import statements
-const express = require('express');
 const mongoose = require('mongoose');
 const https = require('https');
 const fs = require('fs')
@@ -16,14 +15,11 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, { useNewUrlParser: true,
         console.log('A connection to MongoDB has been established!');
 })
 
-// Define backend server
-const backend = express();
-
-// Backend port
+// Backend portP
 const port = process.env.PORT || 5000;
 
 // Run HTTPS backend server
 https.createServer({
     key: fs.readFileSync('./server.key'),
     cert: fs.readFileSync('./server.cert')
-}, backend).listen(port, () => console.log(`Express backend server is running on port ${port}`))
+}).listen(port, () => console.log(`Express backend server is running on port ${port}`))

@@ -25,6 +25,11 @@ Afterwards, run the following command:
 git run dev
 ```
 
+The following will run 2 servers on your local machine (127.0.0.1):
+
+- A backend server running on port 5000
+- A frontend React server running on port 3000
+
 ### License
 
 This project is [MIT Licensed]('./LICENSE)
