@@ -1,0 +1,2 @@
+# Test backend API calls using REST Client extension
+get https://127.0.0.1:5000/products/all
