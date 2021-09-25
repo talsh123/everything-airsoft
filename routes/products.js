@@ -1,7 +1,6 @@
 // Import statements
 const express = require('express');
 const Product = require('../models/Product')
-const mongoose = require('mongoose')
 
 // Define express router
 const router = express.Router()

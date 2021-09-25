@@ -1,7 +1,7 @@
 // Import statements
 const mongoose = require('mongoose');
 
-// Define Schema
+// Define schema
 const schema = mongoose.Schema;
 
 const communitySchema = new schema({
