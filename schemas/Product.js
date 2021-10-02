@@ -28,7 +28,25 @@ const productSchema = new schema({
     required: true,
     default: [],
   },
-  properties: {},
+  rating: {
+    type: mongoose.Types.Decimal128,
+    required: true,
+    min: 0,
+    max: 5,
+    default: 0,
+  },
+  properties: {
+    type: String,
+    minlength: 1,
+    required: true,
+    trim: true,
+  },
+  unitsSold: {
+    type: Number,
+    min: 0,
+    required: true,
+    default: 0,
+  },
 });
 
 const product = mongoose.model('Product', productSchema);

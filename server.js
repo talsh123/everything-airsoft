@@ -9,8 +9,10 @@ const backend = express();
 
 // Routes
 const productsRouter = require('./routes/products');
+const manufacturers = require('./routes/manufacturers');
 
 backend.use('/products', productsRouter);
+backend.use('/manufacturers', manufacturers);
 
 // Environment variables
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();

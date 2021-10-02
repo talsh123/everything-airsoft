@@ -1,2 +1,15 @@
 # Test backend API calls using REST Client extension
-get https://127.0.0.1:5000/products/all
+
+# Products
+# get https://127.0.0.1:5000/products/all
+
+# get https://127.0.0.1:5000/products/featured
+
+# get https://127.0.0.1:5000/products/mostUnitsSold
+
+# get https://127.0.0.1:5000/products/newArrivals
+
+# get https://127.0.0.1:5000/products/categories
+
+# Manufacturers
+# get https://127.0.0.1:5000/manufacturers/all
