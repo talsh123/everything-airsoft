@@ -6,7 +6,7 @@ const schema = mongoose.Schema;
 
 const sessionSchema = new schema(
   {
-    userIP: {
+    userIp: {
       type: String,
       trim: true,
       required: true,

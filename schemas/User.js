@@ -36,11 +36,6 @@ const userSchema = new schema(
       required: true,
       default: false,
     },
-    isModerator: {
-      type: Boolean,
-      required: true,
-      default: false,
-    },
     isAdmin: {
       type: Boolean,
       required: true,
