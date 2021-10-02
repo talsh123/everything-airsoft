@@ -26,7 +26,7 @@ const userSchema = new schema(
       unique: true,
     },
     communities: {
-      type: [mongoose.Types.ObjectId],
+      type: [mongoose.Schema.Types.ObjectId],
       ref: 'Community',
       default: [],
       required: true,

@@ -8,11 +8,19 @@ const express = require('express');
 const backend = express();
 
 // Routes
+const manufacturersRouter = require('./routes/manufacturers');
+const ordersRouter = require('./routes/orders');
 const productsRouter = require('./routes/products');
-const manufacturers = require('./routes/manufacturers');
+const ratingsRouter = require('./routes/ratings');
+const sessionsRouter = require('./routes/sessions');
+const usersRouter = require('./routes/users');
 
+backend.use('/manufacturers', manufacturersRouter);
+backend.use('/orders', ordersRouter);
 backend.use('/products', productsRouter);
-backend.use('/manufacturers', manufacturers);
+backend.use('/ratings', ratingsRouter);
+backend.use('/sessions', sessionsRouter);
+backend.use('/users', usersRouter);
 
 // Environment variables
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();

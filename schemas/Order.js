@@ -7,7 +7,7 @@ const schema = mongoose.Schema;
 const orderSchema = new schema(
   {
     userId: {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true,
     },
@@ -17,7 +17,7 @@ const orderSchema = new schema(
       required: true,
     },
     products: {
-      type: [mongoose.Types.ObjectId],
+      type: [mongoose.Schema.Types.ObjectId],
       ref: 'Product',
       required: true,
       default: [],

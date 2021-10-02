@@ -13,7 +13,7 @@ const sessionSchema = new schema(
       minlength: 10,
     },
     userId: {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true,
     },
