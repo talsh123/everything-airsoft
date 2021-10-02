@@ -39,3 +39,5 @@ router.post('/new', async (req, res) => {
 router.delete('/delete/:username', async (req, res) => {
   // Fill this later
 });
+
+module.exports = router;
