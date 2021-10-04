@@ -17,4 +17,18 @@ router.get('/all', async (_req, res) => {
   }
 });
 
+// Save a new manufacturer into the MongoDB database
+router.post('/new', async (req, res) => {
+  try {
+    const { name, info } = req.body;
+    const newManufacturer = new Manufacturer({
+      name,
+      info,
+    });
+    res.status(200).json(newManufacturer);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 module.exports = router;

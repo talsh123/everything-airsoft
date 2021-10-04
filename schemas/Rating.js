@@ -11,11 +11,6 @@ const ratingSchema = new schema(
       ref: 'User',
       required: true,
     },
-    productId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Product',
-      required: true,
-    },
     rating: {
       type: mongoose.Types.Decimal128,
       required: true,

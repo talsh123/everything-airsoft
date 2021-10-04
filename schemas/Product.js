@@ -10,6 +10,7 @@ const productSchema = new schema({
     required: true,
     trim: true,
     minlength: 1,
+    unique: true,
   },
   price: {
     type: mongoose.Types.Decimal128,
@@ -28,13 +29,6 @@ const productSchema = new schema({
     required: true,
     default: [],
   },
-  rating: {
-    type: mongoose.Types.Decimal128,
-    required: true,
-    min: 0,
-    max: 5,
-    default: 0,
-  },
   properties: {
     type: String,
     minlength: 1,
@@ -46,6 +40,11 @@ const productSchema = new schema({
     min: 0,
     required: true,
     default: 0,
+  },
+  manufacturer: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'Manufacturer',
   },
 });
 

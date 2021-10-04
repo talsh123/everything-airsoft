@@ -10,7 +10,7 @@ router.use(express.json());
 // Get user session
 router.get('/get/:sessionId/:userIp', async (req, res) => {
   try {
-    const session = Session.findOne({
+    const session = await Session.findOne({
       _id: req.params.sessionId,
       userIp: req.params.userIp,
     });
@@ -29,7 +29,7 @@ router.post('/new', async (req, res) => {
       UserId,
     });
 
-    res.status(200).json(newSession.save());
+    res.status(200).json(await newSession.save());
   } catch (err) {
     console.log(err);
   }

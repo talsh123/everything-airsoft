@@ -52,12 +52,60 @@ router.get('/newArrivals', async (_req, res) => {
   }
 });
 
-// Send back the latest products added to the store
-router.get('/categories', async (_req, res) => {
+// Send back the products given a category
+router.get('/getCategory/:category', async (req, res) => {
   try {
-    const products = await Product.find();
-    const categories = products.filter((x, i, a) => a.indexOf(x) == i);
-    res.status(200).json(categories);
+    const products = await Product.find({ category: req.params.category });
+    res.status(200).json(products);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+// Save a new product into the MongoDB database
+router.post('/new', async (req, res) => {
+  try {
+    const {
+      name,
+      price,
+      category,
+      ratings,
+      properties,
+      unitsSold,
+      manufacturer,
+    } = req.body;
+    const newProduct = new Product({
+      name,
+      price,
+      category,
+      ratings,
+      properties,
+      unitsSold,
+      manufacturer,
+    });
+    res.status(200).json(await newProduct.save());
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+// Delete a product from the MongoDB database given a product ID
+router.delete('/delete/:productId', async (req, res) => {
+  try {
+    res.status(200).json(await Product.findByIdAndDelete(req.params.productId));
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+// Send all the products that are like the given string
+router.get('/like/:name', async (req, res) => {
+  try {
+    const products = Product.find();
+    const likeProducts = (await products).filter((product) =>
+      product.name.match(req.params.name)
+    );
+    res.status(200).json(likeProducts);
   } catch (err) {
     console.log(err);
   }

@@ -25,12 +25,6 @@ const userSchema = new schema(
       trim: true,
       unique: true,
     },
-    communities: {
-      type: [mongoose.Schema.Types.ObjectId],
-      ref: 'Community',
-      default: [],
-      required: true,
-    },
     isVerified: {
       type: Boolean,
       required: true,

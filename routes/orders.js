@@ -1,7 +1,6 @@
 // Import statements
 const express = require('express');
-const mongoose = require('mongoose');
-const Order = require('../models/Order');
+const Order = require('../schemas/Order');
 
 // Define router
 const router = express.Router();
@@ -18,6 +17,16 @@ router.post('/new', async (req, res) => {
       products,
     });
     res.status(200).json(newOrder.save());
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+// Send back all order given a user ID
+router.get('/get/:userId', async (req, res) => {
+  try {
+    const orders = await Order.find({ userId: req.params.userId });
+    res.status(200).json(orders);
   } catch (err) {
     console.log(err);
   }

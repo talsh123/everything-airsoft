@@ -10,6 +10,7 @@ const manufacturerSchema = new schema({
     required: true,
     minlength: 1,
     trim: true,
+    unique: true,
   },
   info: {
     type: String,

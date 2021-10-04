@@ -11,6 +11,7 @@ const communitySchema = new schema(
       required: true,
       minlength: 2,
       trim: true,
+      unique: true,
     },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -26,12 +27,6 @@ const communitySchema = new schema(
       ref: 'User',
       required: true,
       default: [],
-    },
-    numMembers: {
-      type: Number,
-      min: 1,
-      default: 1,
-      required: true,
     },
     posts: {
       type: [mongoose.Schema.Types.ObjectId],

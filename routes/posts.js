@@ -11,7 +11,7 @@ router.use(express.json());
 // Send all the posts of a given community ID
 router.get('/all/:communityId', async (req, res) => {
   try {
-    const posts = Post.find({ communityId: req.params.communityId });
+    const posts = await Post.find({ communityId: req.params.communityId });
     res.status(200).json(posts);
   } catch (err) {
     console.log(err);
@@ -38,7 +38,7 @@ router.post('/new', async (req, res) => {
 // Send back a post given a post ID
 router.get('/get/:postId', async (req, res) => {
   try {
-    const post = Post.findById(req.params.postId);
+    const post = await Post.findById(req.params.postId);
     res.status(200).json(post);
   } catch (err) {
     console.log(err);
@@ -48,7 +48,7 @@ router.get('/get/:postId', async (req, res) => {
 // Delete a post given a post ID
 router.delete('/delete/:postId', async (req, res) => {
   try {
-    const post = Post.findByIdAndDelete(req.params.postId);
+    const post = await Post.findByIdAndDelete(req.params.postId);
     Community.findByIdAndUpdate(post.communityId, {
       $pull: { posts: post._id },
     });
