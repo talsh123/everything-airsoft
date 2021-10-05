@@ -8,15 +8,19 @@ const express = require('express');
 const backend = express();
 
 // Routes
+const communitiesReducer = require('./routes/communities');
 const manufacturersRouter = require('./routes/manufacturers');
 const ordersRouter = require('./routes/orders');
+const postsRouter = require('./routes/posts');
 const productsRouter = require('./routes/products');
 const ratingsRouter = require('./routes/ratings');
 const sessionsRouter = require('./routes/sessions');
 const usersRouter = require('./routes/users');
 
+backend.use('/communities', communitiesReducer);
 backend.use('/manufacturers', manufacturersRouter);
 backend.use('/orders', ordersRouter);
+backend.use('/posts', postsRouter);
 backend.use('/products', productsRouter);
 backend.use('/ratings', ratingsRouter);
 backend.use('/sessions', sessionsRouter);

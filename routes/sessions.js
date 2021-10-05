@@ -23,13 +23,8 @@ router.get('/get/:sessionId/:userIp', async (req, res) => {
 // Save a new session into MongoDB
 router.post('/new', async (req, res) => {
   try {
-    const { userIp, UserId } = req.body;
-    const newSession = new Session({
-      userIp,
-      UserId,
-    });
-
-    res.status(200).json(await newSession.save());
+    const sessions = await Session.insertMany(req.body);
+    res.status(200).json(sessions);
   } catch (err) {
     console.log(err);
   }

@@ -1,15 +1,343 @@
 # Test backend API calls using REST Client extension
 
-# Products
-# get https://127.0.0.1:5000/products/all
+# Products 
+post https://127.0.0.1:5000/products/new HTTP/1.1
+content-type: application/json
 
-# get https://127.0.0.1:5000/products/featured
-
-# get https://127.0.0.1:5000/products/mostUnitsSold
-
-# get https://127.0.0.1:5000/products/newArrivals
-
-# get https://127.0.0.1:5000/products/categories
-
-# Manufacturers
-# get https://127.0.0.1:5000/manufacturers/all
+[
+  {
+    "properties": {
+      "numInStock": 120,
+      "material": "Full Metal",
+      "color": "Silver",
+      "type": "gas",
+      "magCapacity": 15,
+      "innerBarrelLength": 150,
+      "weaponLength": 300,
+      "fps": 300,
+      "weight": 2
+    },
+    "manufacturer": "615c5c4f758f290b3bf0327d",
+    "price": 550,
+    "name": "AW Custom NE12 Series 1911 GBB Pistol",
+    "category": "Handguns"
+  },
+  {
+    "properties": {
+      "numInStock": 120,
+      "material": "High power stainless steel cylinder withstands the use of high power upgrades. Designed by PDI Engineering in Japan Aluminum alloy barrel, trigger, and bolt assembly. High quality textured nylon fiber reinforced polymer stock w/ adjustable cheek riser & rubberized butt pad",
+      "color": "Forest Green",
+      "type": "spring",
+      "magCapacity": 30,
+      "innerBarrelLength": 455,
+      "weaponLength": 1130,
+      "fps": 430,
+      "weight": 3234
+    },
+    "manufacturer": "615c5c4f758f290b3bf0327e",
+    "price": 650,
+    "name": "6mmProShop PDI Custom Upgraded USMC M40A3 Bolt Action Airsoft Sniper Rifle",
+    "category": "Sniper Rifles"
+  },
+  {
+    "properties": {
+      "numInStock": 120,
+      "material": "Full metal frame, cylinder and barrel",
+      "color": "Grey/Black",
+      "type": "gas",
+      "magCapacity": 6,
+      "innerBarrelLength": 200,
+      "weaponLength": 350,
+      "fps": 315,
+      "weight": 2
+    },
+    "manufacturer": "615c5c4f758f290b3bf03280",
+    "price": 380,
+    "name": "Dan Wesson 715 CO2 Powered Airsoft Revolver",
+    "category": "Revolvers"
+  },
+  {
+    "price": 780,
+    "manufacturer": "615c5c4f758f290b3bf03281",
+    "properties": {
+      "numInStock": 120,
+      "material": "Fiber-reinforced nylon polymer receiver, handguard, top cover, stock and bipod",
+      "color": "Black",
+      "type": "electric",
+      "magCapacity": 300,
+      "innerBarrelLength": 340,
+      "weaponLength": 930,
+      "fps": 390,
+      "weight": 3.5
+    },
+    "name": "Cybergun FN Licensed M249 Para \"Featherweight\" Airsoft Machine Gun",
+    "category": "Machineguns"
+  },
+  {
+    "price": 600,
+    "manufacturer": "615c5c4f758f290b3bf03283",
+    "properties": {
+      "numInStock": 120,
+      "color": "Black",
+      "material": "Full Metal CNC Aluminum Construction"
+    },
+    "name": "Avengers 4x32 Magnified Scope w/ Red Dot Reflex Sight",
+    "category": "Optics"
+  },
+  {
+    "price": 80,
+    "manufacturer": "615c5c4f758f290b3bf03282",
+    "properties": {
+      "numInStock": 120,
+      "material": "Solid one piece aluminum design",
+      "color": "Black"
+    },
+    "name": "PTS® Fortis Shift™ CNC Machined Billet Aluminum Short Vertical M-LOK Mounted Grip",
+    "category": "Grips"
+  },
+  {
+    "price": 120,
+    "manufacturer": "615c5c4f758f290b3bf03282",
+    "properties": {
+      "numInStock": 120,
+      "material": "Aluminum Alloy",
+      "color": "Black"
+    },
+    "name": "PP19 Aluminum Mock Supressor",
+    "category": "Suppressors"
+  },
+  {
+    "price": 50,
+    "manufacturer": "615c5c4f758f290b3bf03283",
+    "properties": {
+      "numInStock": 1202,
+      "material": "Made with precision CNC machining for optimized durability and fine detail",
+      "color": "Black"
+    },
+    "name": "Angel Custom Threaded Adapter for HIVE Mock Silencer",
+    "category": "Silencers"
+  },
+  {
+    "price": 60,
+    "manufacturer": "615c5c4f758f290b3bf03285",
+    "properties": {
+      "numInStock": 120,
+      "material": "Ergonomic Airsoft battery friendly stock inspired by real steel Magpul and BCM stock designs!",
+      "color": "Black"
+    },
+    "name": "CYMA Retractable Battery Storage Stock for M4 / M16 Series Rifles",
+    "category": "Stocks"
+  },
+  {
+      "manufacturer": "615c5c4f758f290b3bf03286",
+      "price": 10,
+    "properties": {
+      "numInStock": 120,
+      "material": "Lithium Battery",
+      "color": "Red & Black"
+    },
+    "name": "High Performance CR123A 3V Lithium Battery",
+    "category": "Batteries"
+  },
+  {
+    "price": 35,
+    "manufacturer": "615c5c4f758f290b3bf03285",
+    "properties": {
+      "numInStock": 120,
+      "material": "Sturdy Plastic",
+      "color": "Black"
+    },
+    "name": "CYMA AK74-Style Magazine for AK Series Airsoft AEG Rifle",
+    "category": "Magazines"
+  },
+  {
+    "price": 120,
+    "manufacturer": "615c5c4f758f290b3bf03285",
+    "properties": {
+      "numInStock": 120,
+      "material": "High strength steel construction",
+      "color": "Black"
+    },
+    "name": "Samurai V-Grooved Multi Purpose Steel Bipod for Airsoft Sniper Rifles",
+    "category": "Bipods"
+  },
+  {
+    "price": 150,
+    "manufacturer": "615c5c4f758f290b3bf03285",
+    "properties": {
+      "numInStock": 120,
+      "material": "Full Metal Body",
+      "color": "Black"
+    },
+    "name": "Tactical Laser Flashlight Kit",
+    "category": "Lasers"
+  },
+  {
+    "price": 150,
+    "manufacturer": "615c5c4f758f290b3bf0327f",
+    "properties": {
+      "numInStock": 120,
+      "material": "High quality cotton / Polyester Ripstop fabric",
+      "color": "Desert",
+      "accessorySize": "s"
+    },
+    "name": "R6 BDU Field Uniform Set",
+    "category": "Uniforms"
+  },
+  {
+    "price": 175,
+    "manufacturer": "615c5c4f758f290b3bf03287",
+    "properties": {
+      "numInStock": 120,
+      "material": "Heard-wearing ballistic nylon material stands up to abuse with remarkable longevity",
+      "color": "Black",
+      "accessorySize": "l"
+    },
+    "name": "Matrix Level-1 Plate Carrier with Integrated Magazine Pouches",
+    "category": "Vests"
+  },
+  {
+    "price": 35,
+    "manufacturer": "615c5c4f758f290b3bf03284",
+    "properties": {
+      "numInStock": 120,
+      "material": "Ballistic nylon construction, injection molded polymer buckle",
+      "color": "Coyote Brown",
+      "accessorySize": "xl"
+    },
+    "name": "Condor G.I. Style Pistol Belt",
+    "category": "Belts"
+  },
+  {
+    "price": 130,
+    "manufacturer": "615c5c4f758f290b3bf03284",
+    "properties": {
+      "numInStock": 120,
+      "material": "Nylon, Suede, rubber",
+      "color": "Black",
+      "accessorySize": "xl"
+    },
+    "name": "8 GI Type Jungle Boots (Size: 9 / Black)",
+    "category": "Boots"
+  },
+  {
+    "price": 35,
+    "manufacturer": "615c5c4f758f290b3bf03288",
+    "properties": {
+      "numInStock": 120,
+      "material": "Abrasion resistant synthetic leather palm",
+      "color": "Black",
+      "accessorySize": "s"
+    },
+    "name": "EMG / Mechanix Wear FastFit Covert Tactical Gloves",
+    "category": "Gloves"
+  },
+  {
+    "price": 700,
+    "manufacturer": "615c5c4f758f290b3bf0327e",
+    "properties": {
+      "numInStock": 120,
+      "material": "All available lenses are made from Plutonite®, Oakleys high purity optical grade polycarbonate",
+      "color": "Matte Black",
+      "accessorySize": "xl"
+    },
+    "name": "Flak 2.0 XL Glasses (Color: Matte Black / Iridium Polarized)",
+    "category": "Shades"
+  },
+  {
+    "price": 250,
+    "manufacturer": "615c5c4f758f290b3bf0327e",
+    "properties": {
+      "numInStock": 120,
+      "material": "Lightweight, hard shell design",
+      "color": "Dark Earth",
+      "accessorySize": "m"
+    },
+    "name": "6mmProShop Advanced High Cut Ballistic Type Tactical Airsoft Bump Helmet",
+    "category": "Helmets"
+  },
+  {
+    "price": 40,
+    "manufacturer": "615c5c4f758f290b3bf03287",
+    "properties": {
+      "numInStock": 120,
+      "material": "Formulated with environmentally friendly materials, perfectly spherical with a high gloss finish results in a BB free of seams and surface imperfections",
+      "color": "White",
+      "ammunitionSize": "6mm",
+      "ammunitionQuantity": 1000
+    },
+    "name": "0.40g \"Sniper MAX Grade\" 6mm Airsoft BB by Matrix",
+    "category": "6mm"
+  },
+  {
+    "price": 50,
+    "manufacturer": "615c5c4f758f290b3bf03289",
+    "properties": {
+      "numInStock": 120,
+      "material": "MadBull Match Grade BBs are further refined using a specially controlled cooling process which prevents bubbles and imperfections from forming giving you a more accurate BB.",
+      "color": "White",
+      "ammunitionSize": "8mm",
+      "ammunitionQuantity": 850
+    },
+    "name": "MadBull High Impact 8mm Airsoft Sniper BB (Model: .48g White / 850rd Bottle)",
+    "category": "8mm"
+  },
+  {
+    "price": 40,
+    "manufacturer": "615c5c4f758f290b3bf03287",
+    "properties": {
+      "numInStock": 120,
+      "material": "Perfectly spherical with a high gloss finish results in a BB free of seams and surface imperfections",
+      "color": "Green Tracer",
+      "ammunitionSize": "6mm",
+      "ammunitionQuantity": 2000
+    },
+    "name": "Matrix Match Grade 6mm Glow-in-the-Dark Airsoft Tracer BB (Model: 0.25g Green 2000rds)",
+    "category": "Tracer"
+  },
+  {
+    "price": 20,
+    "manufacturer": "615c5c4f758f290b3bf03287",
+    "properties": {
+      "numInStock": 120,
+      "material": "Made from environmentally friendly materials Designed for professional training & simulation gaming",
+      "color": "Blue",
+      "ammunitionSize": "6mm",
+      "ammunitionQuantity": 2000
+    },
+    "name": "Matrix 0.12g Match Grade 6mm Airsoft BBs in Loading Bottle",
+    "category": "0.12g"
+  },
+  {
+    "price": 350,
+    "manufacturer": "615c5c4f758f290b3bf03285",
+    "properties": {
+      "numInStock": 120,
+      "material": "Full metal receiver",
+      "color": "Combat Grey",
+      "type": "spring",
+      "magCapacity": 30,
+      "weaponLength": 850,
+      "fps": 300,
+      "weight": 3
+    },
+    "name": "CYMA Sport Tactical -Round Burst AirM3 Super 90 3soft ShotgunCYMA Sport Tactical M3 Super 90 3-Round Burst Airsoft Shotgun",
+    "category": "Shotguns"
+  },
+  {
+    "price": 1250,
+    "manufacturer": "615c5c4f758f290b3bf0327f",
+    "properties": {
+      "numInStock": 120,
+      "material": "High impact reinforced polymer construction",
+      "color": "Grey",
+      "type": "electric",
+      "magCapacity": 470,
+      "weaponLength": 820,
+      "fps": 600,
+      "weight": 1
+    },
+    "name": "SRC SM8 Airsoft AEG Rifle",
+    "category": "Assault Rifles"
+  }
+]

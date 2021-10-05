@@ -21,21 +21,17 @@ router.get('/getRating/:ratingId', async (req, res) => {
 // Save a new Rating into the MongoDB database
 router.post('/new', async (req, res) => {
   try {
-    const { userId, rating, title, text } = req.body;
-    const newRating = new Rating({
-      userId,
-      rating,
-      title,
-      text,
-    });
-    const newRatingDocument = await newRating.save();
-
+    const ratings = Rating.insertMany(req.body);
     // Find the product that has been rated by the user
-    const product = await Product.findById(newRatingDocument.productId);
-    // update it's ratings array and rating number accordingly
-    product.updateOne({
-      $push: { ratings: new mongoose.Types.ObjectId(newRatingDocument._id) },
+    ratings.forEach(async (rating) => {
+      const product = await Product.findById(rating.productId);
+      // update it's ratings array and rating number accordingly
+      await product.updateOne({
+        $push: { ratings: new mongoose.Schema.Types.ObjectId(rating._id) },
+      });
     });
+
+    res.status(200).json(ratings);
   } catch (err) {
     console.log(err);
   }
@@ -45,10 +41,10 @@ router.post('/new', async (req, res) => {
 router.patch('/delete/:ratingId', async (req, res) => {
   try {
     const rating = await Rating.findByIdAndDelete(req.params.ratingId);
-    const product = Product.findById(rating.productId);
     await Product.findByIdAndUpdate(rating.productId, {
       $pull: { ratings: mongoose.Types.ObjectId(rating._id) },
     });
+    res.status(200).json(rating);
   } catch (err) {
     console.log(err);
   }

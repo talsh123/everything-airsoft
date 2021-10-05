@@ -1,0 +1,22 @@
+# Orders
+post https://127.0.0.1:5000/orders/new HTTP/1.1
+content-type: application/json
+
+[
+  {
+    "userId": "615c596ddee267de9e0c6f01",
+    "total": 75,
+    "items": [
+      {
+        "productId": "615c8cf51606bf019b0f1e21",
+        "price": 20,
+        "amount": 2
+      },
+      {
+        "productId": "615c8cf51606bf019b0f1e19",
+        "price": 35,
+        "amount": 1
+      }
+    ]
+  }
+]

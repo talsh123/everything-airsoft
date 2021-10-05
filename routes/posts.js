@@ -21,15 +21,8 @@ router.get('/all/:communityId', async (req, res) => {
 // Save a new post into the MongoDB database
 router.post('/new', async (req, res) => {
   try {
-    const { userId, communityId, title, info, comments } = req.body;
-    const newPost = new Post({
-      userId,
-      communityId,
-      title,
-      info,
-      comments,
-    });
-    newPost.save();
+    const posts = await Post.insertMany(req.body);
+    res.status(200).json(posts);
   } catch (err) {
     console.log(err);
   }

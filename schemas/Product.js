@@ -30,7 +30,7 @@ const productSchema = new schema({
     default: [],
   },
   properties: {
-    type: String,
+    type: Object,
     minlength: 1,
     required: true,
     trim: true,

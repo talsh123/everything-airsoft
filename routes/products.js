@@ -65,25 +65,8 @@ router.get('/getCategory/:category', async (req, res) => {
 // Save a new product into the MongoDB database
 router.post('/new', async (req, res) => {
   try {
-    const {
-      name,
-      price,
-      category,
-      ratings,
-      properties,
-      unitsSold,
-      manufacturer,
-    } = req.body;
-    const newProduct = new Product({
-      name,
-      price,
-      category,
-      ratings,
-      properties,
-      unitsSold,
-      manufacturer,
-    });
-    res.status(200).json(await newProduct.save());
+    const products = await Product.insertMany(req.body);
+    res.status(200).json(products);
   } catch (err) {
     console.log(err);
   }

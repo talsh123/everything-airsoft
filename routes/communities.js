@@ -20,16 +20,9 @@ router.get('/all', async (_req, res) => {
 
 // Save new community into the MongoDB database
 router.post('/new', async (req, res) => {
-  const { name, userId, info, members, posts } = req.body;
   try {
-    const newCommunity = new Community({
-      name,
-      userId,
-      info,
-      members,
-      posts,
-    });
-    res.status(200).json(await newCommunity.save());
+    const communities = Community.insertMany(req.body);
+    res.status(200).json(communities);
   } catch (err) {
     console.log(err);
   }

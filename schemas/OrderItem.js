@@ -4,21 +4,21 @@ const mongoose = require('mongoose');
 // Define schema
 const schema = mongoose.Schema;
 
-const orderSchema = new schema(
+const orderItemSchema = new schema(
   {
-    userId: {
+    product: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      ref: 'Product',
       required: true,
     },
-    total: {
+    price: {
       type: mongoose.Types.Decimal128,
       min: 0,
       required: true,
     },
-    items: {
-      type: [mongoose.Schema.Types.ObjectId],
-      ref: 'OrderItem',
+    amount: {
+      type: Number,
+      min: 0,
       required: true,
     },
   },
@@ -27,6 +27,6 @@ const orderSchema = new schema(
   }
 );
 
-const order = mongoose.model('Order', orderSchema);
+const orderItem = mongoose.model('OrderItem', orderItemSchema);
 
-module.exports = order;
+module.exports = orderItem;

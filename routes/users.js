@@ -28,16 +28,8 @@ router.get('/all', async (_req, res) => {
 // Save a new user into MongoDB
 router.post('/new', async (req, res) => {
   try {
-    let { username, hash, email } = req.body;
-    const newUser = new User({
-      username,
-      hash,
-      email,
-      isVerified: false,
-      isAdmin: false,
-    });
-
-    res.status(200).json(await newUser.save());
+    const users = await User.insertMany(req.body);
+    res.status(200).json(users);
   } catch (err) {
     console.log(err);
   }
@@ -129,7 +121,7 @@ router.delete('/delete/:username', async (req, res) => {
     await Post.deleteMany({ userId: mongoose.Types.ObjectId(user._id) });
 
     // Delete the comments from a post
-    comments.forEach((comment) => {
+    comments.forEach(async (comment) => {
       await Post.updateMany(
         { $in: { comments: mongoose.Types.ObjectId(comment._id) } },
         { $pull: { comments: mongoose.Types.ObjectId(comment._id) } }
@@ -137,13 +129,20 @@ router.delete('/delete/:username', async (req, res) => {
     });
 
     // Delete the ratings
-    const ratings = await Rating.deleteMany({ userId: mongoose.Types.ObjectId(user._id) });
-    ratings.forEach(rating => {
-      Product.updateMany({$in: {'ratings': mongoose.Types.ObjectId(rating._id)}}, {$pull: {'ratings': mongoose.Types.ObjectId(rating._id)}});
-    })
+    const ratings = await Rating.deleteMany({
+      userId: mongoose.Types.ObjectId(user._id),
+    });
+    ratings.forEach(async (rating) => {
+      await Product.updateMany(
+        { $in: { ratings: mongoose.Types.ObjectId(rating._id) } },
+        { $pull: { ratings: mongoose.Types.ObjectId(rating._id) } }
+      );
+    });
 
     // Delete the sessions
     await Session.deleteMany({ userId: mongoose.Types.ObjectId(user._id) });
+
+    res.status(200).json(user);
   } catch (err) {
     console.log(err);
   }

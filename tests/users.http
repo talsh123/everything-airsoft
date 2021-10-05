@@ -1,0 +1,15 @@
+# Users
+post https://127.0.0.1:5000/users/new HTTP/1.1
+content-type: application/json
+
+[   {
+        "username": "talsh",
+        "hash": "$2a$10$9Ib0zjz8qzokiQNSzmmHW.R9McqkR0Y1yY1S3YDUFXHaGt1uJo.8e",
+        "email": "talshalom900@gmail.com"
+    },
+    {
+        "username": "talshalom",
+        "hash": "$2a$10$gNw0wuPqoXwYGIzcltQIcOirFkP9xqhAFBgzYkMQgXBCkO7zHuvZ6",
+        "email": "talshalom500@gmail.com"
+    }
+]
