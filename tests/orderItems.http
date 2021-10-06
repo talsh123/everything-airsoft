@@ -1,0 +1,15 @@
+post https://127.0.0.1:5000/orderItems/new HTTP/1.1
+content-type: application/json
+
+[
+    {
+        "productId": "615da6c83d850d315114e955",
+        "price": 20,
+        "amount": 2
+      },
+      {
+        "productId": "615da6c83d850d315114e956",
+        "price": 35,
+        "amount": 1
+      }
+]

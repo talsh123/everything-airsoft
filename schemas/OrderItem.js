@@ -6,7 +6,7 @@ const schema = mongoose.Schema;
 
 const orderItemSchema = new schema(
   {
-    product: {
+    productId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Product',
       required: true,

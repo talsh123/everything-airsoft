@@ -4,16 +4,12 @@ content-type: application/json
 [
   {
     "name": "New York Official Grouchy Airsoft Store",
-    "userId": "615c596ddee267de9e0c6f01",
-    "info": "Welcome to the official New York Airsoft Grouchy Store. Training are held in the CAPKOL training arena in Kamberley Avenue, New York every Thursday between 19:00 - 21:00",
-    "members": [],
-    "posts": []
+    "userId": "615da6663d850d315114e952",
+    "info": "Welcome to the official New York Airsoft Grouchy Store. Training are held in the CAPKOL training arena in Kamberley Avenue, New York every Thursday between 19:00 - 21:00"
   },
   {
     "name": "Kentucky Official Airsoft Team",
-    "userId": "615c596ddee267de9e0c6f02",
-    "info": "Welcome to the official Kentucky Airsoft Team! \n\nOur training start on 12th of May between 12:00 - 14:00.",
-    "members": [],
-    "posts": []
+    "userId": "615da6663d850d315114e953",
+    "info": "Welcome to the official Kentucky Airsoft Team!. Our training start on 12th of May between 12:00 - 14:00."
   }
 ]
