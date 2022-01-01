@@ -1,34 +1,38 @@
 {
-  "name": "everything-airsoft",
-  "version": "1.0.0",
-  "description": "Everything Airsoft website allows users to browse and purchase items relating to the Airsoft sport.",
-  "main": "server.js",
-  "scripts": {
-    "server": "set HTTPS=true&&set SSL_CRT_FILE=backend.cert&&set SSL_KEY_FILE=backend.key&&nodemon server.js",
-    "frontend": "cd frontend && npm run start",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/talsh123/everything-airsoft.git"
-  },
-  "keywords": [
-    "Airsoft"
-  ],
-  "author": "Tal-Shalom Ben Ovadia",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/talsh123/everything-airsoft/issues"
-  },
-  "homepage": "https://github.com/talsh123/everything-airsoft#readme",
-  "dependencies": {
-    "concurrently": "^6.2.1",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "https": "^1.0.0",
-    "mongoose": "^6.0.7"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
-  }
+	"name": "everything-airsoft",
+	"version": "1.0.0",
+	"description": "Everything Airsoft website allows users to browse and purchase items relating to the Airsoft sport.",
+	"main": "server.js",
+	"scripts": {
+		"server": "set HTTPS=true&&set SSL_CRT_FILE=backend.cert&&set SSL_KEY_FILE=backend.key&&nodemon server.js",
+		"frontend": "cd frontend && npm run start",
+		"dev": "concurrently \"npm run server\" \"npm run frontend\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/talsh123/everything-airsoft.git"
+	},
+	"keywords": [
+		"Airsoft"
+	],
+	"author": "Tal-Shalom Ben Ovadia",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/talsh123/everything-airsoft/issues"
+	},
+	"homepage": "https://github.com/talsh123/everything-airsoft#readme",
+	"dependencies": {
+		"bootstrap": "^5.1.3",
+		"concurrently": "^6.5.1",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.2",
+		"https": "^1.0.0",
+		"mongoose": "^6.1.4"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	},
+	"prettier": {
+		"tabWidth": 4
+	}
 }
